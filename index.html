@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Character counter</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <img class="logo" src="assets/images/logo-dark-theme.svg" alt="" />
+        <img class="sun-icon" src="assets/images/icon-sun.svg" alt="" />
+      </div>
+      <h1 class="main-title">Analyze your text in real-time.</h1>
+    </header>
+    <main>
+      <div class="character-counter-container">
+        <div class="input-system">
+          <textarea class="input-box" rows="3" cols="10" type="text" id="text" name="text"></textarea>
+        </div>
+        <div class="input-properties">
+          <div class="exclude-spaces-group">
+            <input class="checkbox-input" type="checkbox" name="exclude-spaces" id="exclude-spaces" />
+            <label class="checkbox" for="exclude-spaces" aria-label="Exclude Spaces">
+              <div class="checkbox-icon">
+                <object data="assets/images/icon-check.svg" type="image/svg+xml" class="checkbox-tick"></object>
+              </div>
+              <span class="checkbox-label"><span class="visually-hidden">Select to </span>Exclude Spaces</span>
+            </label>
+          </div>
+
+          <div class="set-character-limit-group">
+            <input class="checkbox-input" type="checkbox" name="set-character-limit" id="set-character-limit" />
+            <label class="checkbox" for="set-character-limit" aria-label="Set Character Limit">
+              <div class="checkbox-icon">
+                <object data="assets/images/icon-check.svg" type="image/svg+xml" class="checkbox-tick"></object>
+              </div>
+              <span class="checkbox-label"><span class="visually-hidden">Select to </span>Set Character Limit</span>
+            </label>
+          </div>
+
+          <p class="approx-reading-time">Approx. reading time: &lt;<span class="reading-time-minutes">1</span> minute</span></p>
+        </div>
+
+        <div class="statistics">
+          <div class="statistics-item statistics-characters">
+            <div class="statistics-holder">
+              <p class="statistic-title characters-statistic">278</p>
+              <p class="statistic-description">Total Characters</p>
+            </div>
+            <object data="assets/images/pattern-character-count.svg" type="image/svg+xml" class="statistic-pattern"></object>
+          </div>
+
+          <div class="statistics-item statistics-words">
+            <div class="statistics-holder">
+              <p class="statistic-title words-statistic">39</p>
+              <p class="statistic-description">Word Count</p>
+            </div>
+            <object data="assets/images/pattern-word-count.svg" type="image/svg+xml" class="statistic-pattern"></object>
+          </div>
+
+          <div class="statistics-item statistics-sentences">
+            <div class="statistics-holder">
+              <p class="statistic-title sentences-statistic">04</p>
+              <p class="statistic-description">Sentence Count</p>
+            </div>
+            <object data="assets/images/pattern-sentence-count.svg" type="image/svg+xml" class="statistic-pattern"></object>
+          </div>
+        </div>
+
+        <div class="letter-density">
+          <h2>Letter Density</h2>
+          <div class="density-statistics">
+            <div class="statistic-letter-holder">
+              <p class="statistic-letter-title">E</p>
+              <progress class="statistic-letter-progress" id="e" value="40" max="100"></progress>
+              <p class="statistic-letter-percentage">40 (16.06%)</p>
+            </div>
+          </div>
+
+          <div class="density-statistics">
+            <div class="statistic-letter-holder">
+              <p class="statistic-letter-title">E</p>
+              <progress class="statistic-letter-progress" id="e" value="29" max="100"></progress>
+              <p class="statistic-letter-percentage">40 (16.06%)</p>
+            </div>
+          </div>
+
+          <div class="density-statistics">
+            <div class="statistic-letter-holder">
+              <p class="statistic-letter-title">E</p>
+              <progress class="statistic-letter-progress" id="e" value="28" max="100"></progress>
+              <p class="statistic-letter-percentage">40 (16.06%)</p>
+            </div>
+          </div>
+
+          <div class="density-statistics">
+            <div class="statistic-letter-holder">
+              <p class="statistic-letter-title">E</p>
+              <progress class="statistic-letter-progress" id="e" value="21" max="100"></progress>
+              <p class="statistic-letter-percentage">40 (16.06%)</p>
+            </div>
+          </div>
+
+
+          <button class="see-more">See more <i class="fa-solid fa-angle-down"></i></button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

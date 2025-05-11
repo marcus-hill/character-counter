@@ -1,0 +1,312 @@
+// https://piccalil.li/blog/a-modern-css-reset
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Code: */
+
+body {
+  background-color: #12131a;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  font-family: "DM Sans", sans-serif;
+  margin: 1rem;
+  gap: calc(40rem / 16);
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sun-icon {
+  background-color: #2a2b37;
+  padding: calc(7.5rem / 16);
+  border-radius: 6px;
+}
+
+.sun-icon:hover {
+  cursor: pointer;
+}
+
+.main-title {
+  color: #f2f2f7;
+  text-align: center;
+  font-size: calc(40rem / 16);
+  font-weight: 800;
+}
+
+main {
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.input-system {
+  width: 100%;
+}
+
+.input-box {
+  background-color: #21222c;
+  border: 2px solid #2a2b37;
+  outline: none;
+  border-radius: 12px;
+  width: 100%;
+  min-height: calc(200rem / 16);
+  box-sizing: border-box;
+  padding: 1rem;
+  color: #e4e4ef;
+  font-size: calc(20rem / 16);
+}
+
+.character-counter-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-properties {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12rem / 16);
+  margin-top: 1rem;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.checkbox-icon {
+  border: 1px solid #e4e4ef;
+  display: inline-flex;
+  box-sizing: border-box;
+  padding: calc(2.5rem / 16);
+  border-radius: 4px;
+}
+
+.checkbox-icon object {
+  visibility: hidden;
+}
+
+.checkbox-input:checked + .checkbox div:first-child {
+  background-color: #c27cf8;
+  border-color: transparent;
+}
+
+.checkbox-input:checked + .checkbox object {
+  display: inline-block;
+  visibility: visible;
+}
+
+.checkbox-input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.checkbox-label {
+  color: #e4e4ef;
+  margin-left: 0.5rem;
+  font-weight: 300;
+}
+
+.checkbox-icon:hover {
+  cursor: pointer;
+}
+
+.approx-reading-time {
+  color: #e4e4ef;
+  font-weight: 300;
+}
+
+.statistics {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: calc(40rem / 16);
+  margin-bottom: calc(24rem / 16);
+}
+
+.statistics-characters {
+  background-color: #d3a0fa;
+}
+
+.statistics-words {
+  background-color: #ff9f00;
+}
+
+.statistics-sentences {
+  background-color: #fe8159;
+}
+
+.statistics-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.statistics-holder {
+  margin-left: calc(20rem / 16);
+}
+
+.statistic-title {
+  font-size: calc(40rem / 16);
+  font-weight: 800;
+}
+
+.statistic-description {
+  font-size: calc(22rem / 16);
+  font-weight: 400;
+}
+
+.statistic-pattern {
+  position: relative;
+  right: calc(-15rem / 16);
+}
+
+.letter-density h2 {
+  color: #e4e4ef;
+  font-size: calc(24rem / 16);
+  font-weight: 500;
+  margin-bottom: calc(20rem / 16);
+}
+
+.density-statistics {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.statistic-letter-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  grid-template-columns: 1fr, 10fr, 1fr;
+  grid-template-rows: 1fr;
+  color: #e4e4ef;
+  margin-bottom: 0.6rem;
+}
+
+.statistic-letter-progress {
+  width: 75%;
+  color: #d3a0fa;
+  background: #21222c;
+  border-radius: 12px;
+}
+
+.statistic-letter-progress::-webkit-progress-bar {
+  background: #21222c;
+  border-radius: 12px;
+}
+
+.statistic-letter-progress::-webkit-progress-value {
+  /* filled portion*/
+  background: #d3a0fa;
+  border-radius: 12px;
+}
+
+.statistic-letter-progress::-moz-progress-bar {
+  /* filled portion*/
+  background: #d3a0fa;
+  border-radius: 12px;
+}
+
+.see-more {
+  margin-top: calc(20rem / 16);
+  outline: none;
+  color: #e4e4ef;
+  font-size: calc(20rem / 16);
+  background: none;
+  border: none;
+  text-align: left;
+  display: flex;
+  padding-left: 0;
+  align-items: center;
+  gap: calc(8rem / 16);
+}
