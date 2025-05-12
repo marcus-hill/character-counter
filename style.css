@@ -78,7 +78,20 @@ select {
 /* Code: */
 
 body {
-  background-color: #12131a;
+  background-image: url(assets/images/bg-dark-theme.png);
+}
+
+body[data-theme="light"] {
+  background-image: url(assets/images/bg-light-theme.png);
+}
+
+.logo[data-theme="light"] {
+  content: url(assets/images/logo-light-theme.svg);
+}
+
+.sun-icon[data-theme="light"] {
+  content: url(assets/images/icon-moon.svg);
+  background-color: #F2F2F7;
 }
 
 header {
@@ -111,6 +124,20 @@ header {
   font-weight: 800;
 }
 
+.main-title[data-theme="light"] {
+  color: #12131A;
+}
+
+.input-box[data-theme="light"] {
+  background-color: #F2F2F7;
+  border: 2px solid #E4E4EF;
+  color: #2A2B37;
+}
+
+.input-box[data-theme="light"]::placeholder {
+  color: #2A2B37;
+}
+
 main {
   font-family: "DM Sans", sans-serif;
   display: flex;
@@ -133,6 +160,16 @@ main {
   padding: 1rem;
   color: #e4e4ef;
   font-size: calc(20rem / 16);
+  resize: none;
+}
+
+.input-warning {
+  border-color: #FE8159;
+  box-shadow: -2px 2px 11px -2px rgba(254,129,89,0.75);
+}
+
+.input-box::placeholder {
+  color: #e4e4ef;
 }
 
 .character-counter-container {
@@ -146,6 +183,42 @@ main {
   flex-direction: column;
   gap: calc(12rem / 16);
   margin-top: 1rem;
+}
+
+.checkbox-label[data-theme="light"] {
+  color: #2A2B37;
+}
+
+.checkbox-icon[data-theme="light"] {
+  border: 1px solid #2A2B37;
+}
+
+.approx-reading-time[data-theme="light"] {
+  color: #2A2B37;
+}
+
+#letter-density-title[data-theme="light"] {
+  color: #2A2B37;
+}
+
+#no-text[data-theme="light"] {
+  color: #2A2B37;
+}
+
+.toggle-letters[data-theme="light"] {
+  color: #2A2B37;
+}
+
+.density-statistics[data-theme="light"] {
+  color: #2A2B37;
+}
+
+.statistic-letter-title[data-theme="light"] {
+  color: #2A2B37;
+}
+
+.statistic-letter-percentage[data-theme="light"] {
+  color: #2A2B37;
 }
 
 .visually-hidden {
@@ -193,6 +266,11 @@ main {
 
 .checkbox-icon:hover {
   cursor: pointer;
+}
+
+.no-text {
+  color: #E4E4EF;
+  margin-top: calc(20rem/16);
 }
 
 .approx-reading-time {
@@ -252,7 +330,6 @@ main {
   color: #e4e4ef;
   font-size: calc(24rem / 16);
   font-weight: 500;
-  margin-bottom: calc(20rem / 16);
 }
 
 .density-statistics {
@@ -274,15 +351,28 @@ main {
 }
 
 .statistic-letter-progress {
-  width: 75%;
+  width: 70%;
+  height: 0.7rem;
   color: #d3a0fa;
   background: #21222c;
   border-radius: 12px;
 }
 
+.statistic-letter-progress[data-theme="light"] {
+  background: #F2F2F7;
+}
+
+.statistic-letter-percentage, .statistic-letter-title {
+  font-size: calc(14rem/16);
+}
+
 .statistic-letter-progress::-webkit-progress-bar {
   background: #21222c;
   border-radius: 12px;
+}
+
+.statistic-letter-progress[data-theme="light"]::-webkit-progress-bar {
+  background: #F2F2F7;
 }
 
 .statistic-letter-progress::-webkit-progress-value {
@@ -291,13 +381,17 @@ main {
   border-radius: 12px;
 }
 
+.character-limit[data-theme="light"] {
+  color: #12131A;
+}
+
 .statistic-letter-progress::-moz-progress-bar {
   /* filled portion*/
   background: #d3a0fa;
   border-radius: 12px;
 }
 
-.see-more {
+.toggle-letters {
   margin-top: calc(20rem / 16);
   outline: none;
   color: #e4e4ef;
@@ -309,4 +403,74 @@ main {
   padding-left: 0;
   align-items: center;
   gap: calc(8rem / 16);
+}
+
+.hidden {
+  display: none;
+}
+
+.character-limit {
+  margin-left: calc(10rem/16);
+  background: none;
+  outline: none;
+  border: 1px solid #404254;
+  width: calc(50rem/16);
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+}
+
+/* Removing Arrows for Major Browsers */
+.character-limit::-webkit-outer-spin-button,
+.character-limit::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Removing Arrows for Firefox */
+.character-limit {
+  -moz-appearance: textfield;
+}
+
+.character-warning {
+  margin-top: calc(12rem/16);
+  color: #FE8159;
+  margin-bottom: calc(20rem/16);
+}
+
+.exclude-spaces-group {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 50rem) {
+  main {
+    max-width: 80%;
+    margin: calc(34rem/16) auto;
+  }
+
+  header {
+    max-width: 80%;
+    margin: calc(34rem/16) auto;
+  }
+
+  .input-holder {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .input-properties {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  img {
+    opacity: .75;
+    transition: opacity .5s ease-in-out;
+  }
+  img:hover {
+    opacity: 1;
+  }
 }
