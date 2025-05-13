@@ -459,6 +459,7 @@ main {
   main {
     max-width: 80%;
     margin: calc(34rem/16) auto;
+    margin-bottom: calc(90rem/16);
   }
 
   header {
