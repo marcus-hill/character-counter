@@ -455,7 +455,7 @@ main {
   margin-bottom: 0.5rem;
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 40rem) {
   main {
     max-width: 80%;
     margin: calc(34rem/16) auto;
