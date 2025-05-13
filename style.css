@@ -459,7 +459,7 @@ main {
   main {
     max-width: 80%;
     margin: calc(34rem/16) auto;
-    margin-bottom: calc(90rem/16);
+    margin-bottom: calc(200rem/16);
   }
 
   header {
@@ -489,6 +489,13 @@ main {
 
   .statistic-letter-progress {
     width: 87%;
+  }
+
+  .main-title {
+    font-size: calc(64rem/16);
+    text-align: center;
+    margin-left: 10rem;
+    margin-right: 10rem;
   }
 }
 
