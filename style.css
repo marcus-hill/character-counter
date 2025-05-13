@@ -493,9 +493,10 @@ main {
 
   .main-title {
     font-size: calc(64rem/16);
-    text-align: center;
-    margin-left: 10rem;
-    margin-right: 10rem;
+    width: 70%;
+    letter-spacing: -1px;
+    max-width: 50%;
+    margin: 0 auto;
   }
 }
 
