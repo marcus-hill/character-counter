@@ -3,9 +3,10 @@ let excludeSpaces = document.getElementById("exclude-spaces");
 let characterLimit = document.getElementById("character-limit");
 let characterWarning = document.getElementById("character-warning");
 let characterLimitWarning = document.getElementById("character-limit-warning");
+let setCharacterLimit = document.getElementById("set-character-limit");
+let characterLimitLabel = document.getElementById("character-limit-label");
 
 let alphabet = [["A"], ["B"], ["C"], ["D"], ["E"], ["F"], ["G"], ["H"], ["I"], ["J"], ["K"], ["L"], ["M"], ["N"], ["O"], ["P"], ["Q"], ["R"], ["S"], ["T"], ["U"], ["V"], ["W"], ["X"], ["Y"], ["Z"]];
-
 
 let lightMode = false
 
@@ -22,8 +23,29 @@ document.getElementById("sun-icon").addEventListener("click", () => {
         }
         lightMode = true
     }
-    
 });
+
+
+characterLimitLabel.addEventListener("mouseover", () => {
+    mainTextBox.classList.add("input-limit");
+});
+
+characterLimitLabel.addEventListener("mouseout", () => {
+    mainTextBox.classList.remove("input-limit");
+});
+
+function activateMode() {
+    var els = document.querySelectorAll("*");
+    if (lightMode) {
+        for (var i=0; i < els.length; i++) {
+            els[i].setAttribute('data-theme', 'light');
+        }
+    } else {
+        for (var i=0; i < els.length; i++) {
+            els[i].setAttribute('data-theme', 'dark');
+        }
+    }
+}
 
 function removeOldStatistics() {
     alphabet.forEach(function(currentValue, index, arr) {
@@ -144,6 +166,8 @@ function calculateStatistics() {
             holderDiv.appendChild(label);
     
             alphabet[index] = [alphabet[index][0], alphabet[index][1], statisticsDiv]
+
+            activateMode();
         }
     });
 }
@@ -251,8 +275,6 @@ seeLessButton.addEventListener("click", () => {
     calculateStatistics();
 });
 
-let setCharacterLimit = document.getElementById("set-character-limit");
-
 setCharacterLimit.addEventListener("change", (event) => {
     if (event.currentTarget.checked) {
         console.log("test");
@@ -274,10 +296,6 @@ characterLimit.addEventListener("input", (event) => {
 
 excludeSpaces.addEventListener("change", (event) => {
     checkCharacterLimit();
-
-    generateArray();
-
-    calculateStatistics();
 
     generateFrontPageStatistics();
 });
