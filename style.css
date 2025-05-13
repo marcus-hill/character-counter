@@ -476,6 +476,19 @@ main {
     flex-direction: row;
     justify-content: space-between;
   }
+
+  .statistics {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .statistics-item {
+    width: 100%;
+  }
+
+  .statistic-letter-progress {
+    width: 87%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
