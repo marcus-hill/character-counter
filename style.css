@@ -498,6 +498,10 @@ main {
     max-width: 50%;
     margin: 0 auto;
   }
+
+  .statistic-title {
+    font-size: calc(64rem/16);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
